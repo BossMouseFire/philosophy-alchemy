@@ -1,0 +1,54 @@
+{
+  "Antiquity": {
+    "name": "Античная философия",
+    "years": "Конец VII в до н.э.- VI в. н.э.",
+    "description": "",
+    "elements": [
+      {
+        "name": "Человек",
+        "description": "Описание элемента",
+        "icon": "src=........",
+        "parents": [""],
+        "children": ["Проблема", "Спор", "Общество", "Ум", "Идея", "Душа", "Философ", "Нравственность", "Память"],
+        "status": "start",
+        "posX": "0",
+        "posY": "0",
+        "enabled": "true"
+      },
+      {
+        "name": "Мысль",
+        "description": "Описание элемента",
+        "icon": "src=........",
+        "parents": [""],
+        "children": ["Идея", "Мышление", "Бытие", "Знакие"],
+        "status": "start",
+        "posX": "0",
+        "posY": "0",
+        "enabled": "true"
+      },
+      {
+        "name": "Идея",
+        "description": "Описание элемента",
+        "icon": "src=........",
+        "parents": ["Человек", "Мысль"],
+        "children": ["Проблема", "Эйдос", "Бытие", "Знание"],
+        "status": "usual",
+        "posX": "0",
+        "posY": "0",
+        "enabled": "true"
+      }
+    ]
+  },
+  "Middle Ages": {
+    "name": "",
+    "years": "",
+    "description": "",
+    "elements": []
+  },
+  "Renaissance": {
+    "name": "",
+    "years": "",
+    "description": "",
+    "elements": []
+  }
+}

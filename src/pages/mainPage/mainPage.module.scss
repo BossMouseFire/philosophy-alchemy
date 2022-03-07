@@ -1,0 +1,13 @@
+.mainPage {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  .info {
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-size: 2.5rem;
+      color: var(--title-color);
+      text-align: center;
+    }
+  }
+}
