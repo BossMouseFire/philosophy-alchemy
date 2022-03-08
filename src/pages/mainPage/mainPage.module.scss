@@ -4,9 +4,8 @@
   .info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: space-between;
+    padding: 40px 20px 40px;
     width: 45%;
     .titleComponent {
       display: flex;
@@ -22,6 +21,56 @@
     }
     .actions{
       height: 10%;
+    }
+  }
+  .gameComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 55%;
+    padding: 40px 60px 40px 40px;
+
+    .actionsGame {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      .action {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: calc(100% / 3);
+        cursor: pointer;
+        &:hover{
+          span{
+            font-size: 16px;
+            color: var(--white-color);
+          }
+          div{
+            background: var(--white-color);
+          }
+        }
+        span{
+          text-align: center;
+          height: 25px;
+          font-size: 14px;
+          font-weight: 300;
+          color: var(--light-grey-color);
+          letter-spacing: 7px;
+          transition: all ease 300ms;
+        }
+        div {
+          height: 10px;
+          background: var(--light-grey-color);
+          transition: all ease 300ms;
+        }
+        .firstAction {
+          border-radius: 50px 0 0 50px;
+        }
+        .lastAction {
+          border-radius: 0 50px 50px 0;
+        }
+      }
     }
   }
 }

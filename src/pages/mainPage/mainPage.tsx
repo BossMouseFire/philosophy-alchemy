@@ -34,7 +34,23 @@ export const MainPage: React.FC = () => {
         />
         <div className={styles.actions}>fdfd</div>
       </div>
-      <div>test</div>
+      <div className={styles.gameComponent}>
+        <div></div>
+        <div className={styles.actionsGame}>
+          <div className={styles.action}>
+            <span>Античность</span>
+            <div className={styles.firstAction} />
+          </div>
+          <div className={styles.action}>
+            <span>Средневековье</span>
+            <div />
+          </div>
+          <div className={styles.action}>
+            <span>Возрождение</span>
+            <div className={styles.lastAction} />
+          </div>
+        </div>
+      </div>
     </LayoutPage>
   );
 };
