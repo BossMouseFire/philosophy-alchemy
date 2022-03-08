@@ -1,13 +1,27 @@
 .mainPage {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  flex-direction: row;
   .info {
     display: flex;
     flex-direction: column;
-    .title {
-      font-size: 2.5rem;
-      color: var(--title-color);
-      text-align: center;
+    justify-content: space-around;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 45%;
+    .titleComponent {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 10%;
+      span {
+        font-size: 30px;
+        letter-spacing: 7px;
+        font-weight: 300;
+        color: var(--title-color);
+      }
+    }
+    .actions{
+      height: 10%;
     }
   }
 }

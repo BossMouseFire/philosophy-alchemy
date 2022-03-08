@@ -1,54 +1,62 @@
 {
-  "Antiquity": {
-    "name": "Античная философия",
-    "years": "Конец VII в до н.э.- VI в. н.э.",
-    "description": "",
-    "elements": [
-      {
-        "name": "Человек",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": [""],
-        "children": ["Проблема", "Спор", "Общество", "Ум", "Идея", "Душа", "Философ", "Нравственность", "Память"],
-        "status": "start",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      },
-      {
-        "name": "Мысль",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": [""],
-        "children": ["Идея", "Мышление", "Бытие", "Знакие"],
-        "status": "start",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      },
-      {
-        "name": "Идея",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": ["Человек", "Мысль"],
-        "children": ["Проблема", "Эйдос", "Бытие", "Знание"],
-        "status": "usual",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      }
-    ]
-  },
-  "Middle Ages": {
-    "name": "",
-    "years": "",
-    "description": "",
-    "elements": []
-  },
-  "Renaissance": {
-    "name": "",
-    "years": "",
-    "description": "",
-    "elements": []
-  }
+  "eraArray": [
+    {
+      "id": 1,
+      "name": "Античная философия",
+      "years": "Конец VII в до н.э.- VI в. н.э.",
+      "description": "",
+      "elements": [
+        {
+          "id": 1,
+          "name": "Человек",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [2, 3],
+          "children": [3, 4, 5],
+          "status": "start",
+          "posX": "0",
+          "posY": "0",
+          "enabled": "true"
+        },
+        {
+          "id": 2,
+          "name": "Мысль",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [""],
+          "children": ["Идея", "Мышление", "Бытие", "Знакие"],
+          "status": "start",
+          "posX": "0",
+          "posY": "0",
+          "enabled": "true"
+        },
+        {
+          "id": 3,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": ["Человек", "Мысль"],
+          "children": ["Проблема", "Эйдос", "Бытие", "Знание"],
+          "status": "usual",
+          "posX": "0",
+          "posY": "0",
+          "enabled": "true"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "",
+      "years": "",
+      "description": "",
+      "elements": []
+    },
+    {
+      "id": 3,
+      "name": "",
+      "years": "",
+      "description": "",
+      "elements": []
+    }
+  ],
 }
