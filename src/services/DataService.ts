@@ -17,7 +17,7 @@ class DataService {
     const { eraArray } = this.data;
     const era = eraArray.find((era) => era.id === idEra);
     if (era) {
-      era.elements.map((element) => element.id === idElement);
+      return era.elements.find((element) => element.id === idElement);
     }
     return undefined;
   }
