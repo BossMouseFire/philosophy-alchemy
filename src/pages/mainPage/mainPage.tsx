@@ -1,15 +1,13 @@
 import React from 'react';
-import { LayoutPage } from '../../components';
+import { LayoutPage, Game } from '../../components';
 import styles from './mainPage.module.scss';
+import { History } from '../../components/history/history';
 
 export const MainPage: React.FC = () => {
-  console.log('ff');
   return (
     <LayoutPage className={styles.mainPage}>
-      <div className={styles.info}>
-        <span className={styles.title}>Алхимия философии</span>
-      </div>
-      <div>test</div>
+      <History />
+      <Game />
     </LayoutPage>
   );
 };

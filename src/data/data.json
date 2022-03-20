@@ -1,54 +1,110 @@
 {
-  "Antiquity": {
-    "name": "Античная философия",
-    "years": "Конец VII в до н.э.- VI в. н.э.",
-    "description": "",
-    "elements": [
-      {
-        "name": "Человек",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": [""],
-        "children": ["Проблема", "Спор", "Общество", "Ум", "Идея", "Душа", "Философ", "Нравственность", "Память"],
-        "status": "start",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      },
-      {
-        "name": "Мысль",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": [""],
-        "children": ["Идея", "Мышление", "Бытие", "Знакие"],
-        "status": "start",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      },
-      {
-        "name": "Идея",
-        "description": "Описание элемента",
-        "icon": "src=........",
-        "parents": ["Человек", "Мысль"],
-        "children": ["Проблема", "Эйдос", "Бытие", "Знание"],
-        "status": "usual",
-        "posX": "0",
-        "posY": "0",
-        "enabled": "true"
-      }
-    ]
-  },
-  "Middle Ages": {
-    "name": "",
-    "years": "",
-    "description": "",
-    "elements": []
-  },
-  "Renaissance": {
-    "name": "",
-    "years": "",
-    "description": "",
-    "elements": []
-  }
+  "eraArray": [
+    {
+      "id": 1,
+      "name": "Античная философия",
+      "years": "Конец VII в до н.э.- VI в. н.э.",
+      "description": "",
+      "elements": [
+        {
+          "id": 1,
+          "name": "Человек",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [2, 3],
+          "status": "start",
+          "posX": 15,
+          "posY": 15,
+          "enabled": true
+        },
+        {
+          "id": 2,
+          "name": "Мысль",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [1, 3],
+          "status": "start",
+          "posX": 100,
+          "posY": 300,
+          "enabled": true
+        },
+        {
+          "id": 3,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [1, 2],
+          "children": [4],
+          "status": "usual",
+          "posX": 350,
+          "posY": 450,
+          "enabled": false
+        },
+        {
+          "id": 4,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [1, 2, 3, 5, 6, 7],
+          "status": "usual",
+          "posX": 250,
+          "posY": 250,
+          "enabled": true
+        },
+        {
+          "id": 5,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [],
+          "status": "usual",
+          "posX": 300,
+          "posY": 400,
+          "enabled": false
+        },
+        {
+          "id": 6,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [],
+          "status": "usual",
+          "posX": 475,
+          "posY": 475,
+          "enabled": true
+        },
+        {
+          "id": 7,
+          "name": "Идея",
+          "description": "Описание элемента",
+          "icon": "src=........",
+          "parents": [],
+          "children": [],
+          "status": "usual",
+          "posX": 475,
+          "posY": 15,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "",
+      "years": "",
+      "description": "",
+      "elements": []
+    },
+    {
+      "id": 3,
+      "name": "",
+      "years": "",
+      "description": "",
+      "elements": []
+    }
+  ]
 }

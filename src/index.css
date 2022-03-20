@@ -104,4 +104,6 @@ select {
 
 :root {
     --title-color: #FF0000;
+    --white-color: white;
+    --light-grey-color: rgba(255, 255, 255, 0.25);
 }
