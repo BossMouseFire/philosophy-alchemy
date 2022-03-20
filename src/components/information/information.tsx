@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './aboutComponent.module.scss';
-import { IAboutComponent } from './aboutComponentProps';
+import styles from './information.module.scss';
+import { IAboutComponent } from './informationProps';
 
-export const AboutComponent: React.FC<IAboutComponent> = ({ title, years, description }) => {
+export const Information: React.FC<IAboutComponent> = ({ title, years, description }) => {
   return (
     <div className={styles.aboutComponent}>
       <span className={styles.title}>{title}</span>

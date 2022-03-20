@@ -1,0 +1,22 @@
+.history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 20px 40px;
+  width: 35%;
+  .titleComponent {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10%;
+    span {
+      font-size: 26px;
+      letter-spacing: 7px;
+      font-weight: 300;
+      color: var(--title-color);
+    }
+  }
+  .actions{
+    height: 10%;
+  }
+}

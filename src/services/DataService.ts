@@ -21,6 +21,32 @@ class DataService {
     }
     return undefined;
   }
+
+  public checkGeneralChild(
+    parentOne: IElement,
+    parentTwo: IElement,
+    idEra: number
+  ): IElement | undefined {
+    const childrenToOne = parentOne.children;
+    const childrenToTwo = parentTwo.children;
+
+    const generalChildId: number | undefined = childrenToOne.find((id) =>
+      childrenToTwo.includes(id)
+    );
+
+    if (!generalChildId) {
+      return undefined;
+    }
+
+    const generalChild = this.getElement(idEra, generalChildId);
+
+    if (!generalChild) {
+      return undefined;
+    }
+
+    generalChild.enabled = true;
+    return generalChild;
+  }
 }
 
 export default new DataService();

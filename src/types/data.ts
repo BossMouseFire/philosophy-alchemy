@@ -1,14 +1,13 @@
-import { Dispatch, SetStateAction } from 'react';
-
 export interface IElement {
   id: number;
   name: string;
   description: string;
   icon: string;
   parents: number[];
-  childrenId: number[];
+  children: number[];
   status: string;
-  position: IPosition;
+  posX: number;
+  posY: number;
   enabled: boolean;
 }
 
@@ -27,13 +26,6 @@ export interface IEra {
 
 export interface IData {
   eraArray: IEra[];
-}
-
-type IElementPick = Pick<IElement, 'id' | 'icon' | 'childrenId' | 'position' | 'status'>;
-
-export interface ICircleElement extends IElementPick {
-  colorStroke: string;
-  setListLines: Dispatch<SetStateAction<ILinePos[]>>;
 }
 
 export interface ILinePos {
