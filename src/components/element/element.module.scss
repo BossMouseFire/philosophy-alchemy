@@ -1,0 +1,12 @@
+.circle {
+  cursor: pointer;
+  stroke-width: 2px;
+  fill-opacity: 0;
+}
+
+.text {
+  font-size: 12px;
+  fill: var(--white-color);
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
