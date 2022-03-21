@@ -5,7 +5,7 @@ import { GameWrapper } from './gameWrapper';
 import { GameActions } from './gameActions';
 
 export const Game: React.FC = () => {
-  const [eraId, setEraId] = useState<number>(1);
+  const [eraId, setEraId] = useState<number>(0);
 
   return (
     <div className={styles.gameComponent}>

@@ -7,4 +7,6 @@ export interface IElementGame {
   eraId: number;
   setLinesChildren: Dispatch<SetStateAction<ILinePos[]>>;
   setLinesParent: Dispatch<SetStateAction<ILinePos[]>>;
+  ratioWidth: number;
+  ratioHeight: number;
 }

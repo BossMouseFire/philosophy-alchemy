@@ -21,6 +21,8 @@ export const Merger: React.FC = () => {
           name={elements[0].name}
           isText={false}
           position={{ x: 37, y: 38 } as IPosition}
+          ratioWidth={1}
+          ratioHeight={1}
           colorStroke={'#CF0070'}
           imageHref={'http://localhost:3000/images/test.svg'}
         />
@@ -43,6 +45,8 @@ export const Merger: React.FC = () => {
         <Element
           name={elements[1].name}
           isText={false}
+          ratioWidth={1}
+          ratioHeight={1}
           position={{ x: 354, y: 38 } as IPosition}
           colorStroke={'#CF0070'}
           imageHref={'http://localhost:3000/images/test.svg'}
@@ -62,12 +66,14 @@ export const Merger: React.FC = () => {
 
   const getCenterElements = () => {
     if (elements.length === 2) {
-      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 1);
+      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 0);
       if (generalElement) {
         return (
           <Element
             name={generalElement.name}
             isText={false}
+            ratioWidth={1}
+            ratioHeight={1}
             position={{ x: 195, y: 38 } as IPosition}
             colorStroke={'#CF0070'}
             imageHref={'http://localhost:3000/images/test.svg'}

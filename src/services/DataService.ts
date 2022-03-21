@@ -43,7 +43,9 @@ class DataService {
     if (!generalChild) {
       return undefined;
     }
-
+    if (generalChild.enabled) {
+      return undefined;
+    }
     generalChild.enabled = true;
     return generalChild;
   }

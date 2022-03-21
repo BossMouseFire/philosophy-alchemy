@@ -1,20 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './game.module.scss';
 import { Line } from '../line/line';
 import { ElementGame } from '../elementGame/elementGame';
 import DataService from '../../services/DataService';
 import { ILinePos } from '../../types/data';
 import { IGameWrapper } from './gameProps';
-import { colors } from '../../constants';
+import { colors, svgSize } from '../../constants';
 
 export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
   const [linesChildren, setLinesChildren] = useState<ILinePos[]>([]);
   const [linesParent, setLinesParent] = useState<ILinePos[]>([]);
+  const svgRef = useRef() as React.MutableRefObject<SVGSVGElement>;
   const era = DataService.getEraById(eraId);
+
+  const [svgWidth, setSvgWidth] = useState<number>(svgSize.width);
+  const [svgHeight, setSvgHeight] = useState<number>(svgSize.height);
+
+  const ratioWidth = svgWidth / svgSize.width;
+  const ratioHeight = svgHeight / svgSize.height;
+
+  useEffect(() => {
+    window.addEventListener(
+      `resize`,
+      () => {
+        const svgElement = svgRef.current;
+        setSvgWidth(svgElement.width.baseVal.value);
+        setSvgHeight(svgElement.height.baseVal.value);
+      },
+      false
+    );
+    return () => {
+      window.removeEventListener('resize', () => ({}));
+    };
+  }, []);
 
   return (
     <div className={styles.gameWrapper}>
-      <svg width={'100%'} height={'100%'}>
+      <svg width={'100%'} height={'100%'} ref={svgRef}>
         {linesChildren.length &&
           linesChildren.map((line, index) => (
             <Line
@@ -41,6 +63,8 @@ export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
                 eraId={eraId}
                 element={element}
                 colorStroke={colors.element}
+                ratioWidth={ratioWidth}
+                ratioHeight={ratioHeight}
                 setLinesChildren={setLinesChildren}
                 setLinesParent={setLinesParent}
               />
