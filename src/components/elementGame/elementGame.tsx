@@ -37,8 +37,12 @@ export const ElementGame: React.FC<IElementGame> = ({
         positionEnd.x *= ratioWidth;
         positionEnd.y *= ratioHeight;
 
-        console.log('START POSITION', positionStart, positionEnd, ratioWidth, ratioHeight);
-        const [positionStartNew, positionEndNew] = changeCoordinates(positionStart, positionEnd);
+        const average = (ratioHeight + ratioWidth) / 2;
+        const [positionStartNew, positionEndNew] = changeCoordinates(
+          positionStart,
+          positionEnd,
+          average
+        );
         result.push({ positionStart: positionStartNew, positionEnd: positionEndNew });
       }
     });
