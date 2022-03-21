@@ -8,4 +8,6 @@ export interface ElementProps
   colorStroke: string;
   imageHref: string;
   isText: boolean;
+  ratioWidth: number;
+  ratioHeight: number;
 }
