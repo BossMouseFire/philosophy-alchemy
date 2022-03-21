@@ -12,6 +12,8 @@ export const ElementGame: React.FC<IElementGame> = ({
   eraId,
   setLinesChildren,
   setLinesParent,
+  ratioWidth,
+  ratioHeight,
 }) => {
   const { posX, posY, name, children, parents } = element;
   const { elements, setElements } = useGlobalContext();
@@ -21,8 +23,21 @@ export const ElementGame: React.FC<IElementGame> = ({
     arrayIds.map((id) => {
       const element = DataService.getElement(eraId, id);
       if (element && element.enabled) {
-        const positionStart = Object.assign({ x: posX, y: posY } as IPosition);
-        const positionEnd = Object.assign({ x: element.posX, y: element.posY } as IPosition);
+        const positionStart = Object.assign({
+          x: posX,
+          y: posY,
+        } as IPosition);
+        positionStart.x *= ratioWidth;
+        positionStart.y *= ratioHeight;
+
+        const positionEnd = Object.assign({
+          x: element.posX,
+          y: element.posY,
+        } as IPosition);
+        positionEnd.x *= ratioWidth;
+        positionEnd.y *= ratioHeight;
+
+        console.log('START POSITION', positionStart, positionEnd, ratioWidth, ratioHeight);
         const [positionStartNew, positionEndNew] = changeCoordinates(positionStart, positionEnd);
         result.push({ positionStart: positionStartNew, positionEnd: positionEndNew });
       }
@@ -53,6 +68,8 @@ export const ElementGame: React.FC<IElementGame> = ({
       colorStroke={colorStroke}
       imageHref={'http://localhost:3000/images/test.svg'}
       isText={true}
+      ratioHeight={ratioHeight}
+      ratioWidth={ratioWidth}
       onMouseEnter={addLinesOfElements}
       onMouseLeave={clearLines}
       onClick={addElementToMerger}

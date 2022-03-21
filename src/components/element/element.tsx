@@ -9,25 +9,40 @@ export const Element: React.FC<ElementProps> = ({
   colorStroke,
   imageHref,
   isText,
+  ratioHeight,
+  ratioWidth,
   onMouseEnter,
   onMouseLeave,
   onClick,
 }) => {
+  const widthImage = (sizeImage * (ratioWidth + ratioHeight)) / 2;
+  const heightImage = (sizeImage * (ratioWidth + ratioHeight)) / 2;
+  const average = (ratioWidth + ratioHeight) / 2;
   return (
     <g>
-      <image href={imageHref} x={position.x - sizeImage / 2} y={position.y - sizeImage / 2} />
+      <image
+        href={imageHref}
+        x={position.x * ratioWidth - widthImage / 2}
+        y={position.y * ratioHeight - heightImage / 2}
+        width={widthImage}
+        height={heightImage}
+      />
       <circle
         className={styles.circle}
-        r={radius}
-        cx={position.x}
-        cy={position.y}
+        r={radius * average}
+        cx={position.x * ratioWidth}
+        cy={position.y * ratioHeight}
         stroke={colorStroke}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
       />
       {isText && (
-        <text x={position.x} y={position.y + radius * 1.5} className={styles.text}>
+        <text
+          x={position.x * ratioWidth}
+          y={position.y * ratioHeight + radius * 2.1 * average}
+          className={styles.text}
+        >
           {name}
         </text>
       )}

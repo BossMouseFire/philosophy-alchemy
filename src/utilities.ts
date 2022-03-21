@@ -12,6 +12,7 @@ export const changeCoordinates = (
   );
   const legB = ((positionEnd.x - positionStart.x) * radius) / hypotenuse;
   const legA = ((positionEnd.y - positionStart.y) * radius) / hypotenuse;
+
   positionStartNew.x += legB;
   positionStartNew.y += legA;
 

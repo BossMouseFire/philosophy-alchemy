@@ -7,22 +7,22 @@ export const GameActions: React.FC<IGameActions> = ({ eraId, setEraId }) => {
   return (
     <div className={styles.actionsGame}>
       <div
-        className={cn(styles.action, { [styles.actionGameActive]: eraId === 1 })}
-        onClick={() => setEraId(1)}
+        className={cn(styles.action, { [styles.actionGameActive]: eraId === 0 })}
+        onClick={() => setEraId(0)}
       >
         <span>Античность</span>
         <div className={styles.firstAction} />
       </div>
       <div
-        className={cn(styles.action, { [styles.actionGameActive]: eraId === 2 })}
-        onClick={() => setEraId(2)}
+        className={cn(styles.action, { [styles.actionGameActive]: eraId === 1 })}
+        onClick={() => setEraId(1)}
       >
         <span>Средневековье</span>
         <div />
       </div>
       <div
-        className={cn(styles.action, { [styles.actionGameActive]: eraId === 3 })}
-        onClick={() => setEraId(3)}
+        className={cn(styles.action, { [styles.actionGameActive]: eraId === 2 })}
+        onClick={() => setEraId(2)}
       >
         <span>Возрождение</span>
         <div className={styles.lastAction} />
