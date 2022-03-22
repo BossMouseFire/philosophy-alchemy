@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './game.module.scss';
 import { Merger } from '../merger/merger';
 import { GameWrapper } from './gameWrapper';
 import { GameActions } from './gameActions';
 
-export const Game: React.FC = () => {
-  const [eraId, setEraId] = useState<number>(0);
+interface IGame {
+  eraId: number;
+  setEraId: React.Dispatch<React.SetStateAction<number>>;
+}
 
+export const Game: React.FC<IGame> = ({ eraId, setEraId }) => {
   return (
     <div className={styles.gameComponent}>
       <Merger />

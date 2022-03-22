@@ -1,6 +1,6 @@
-import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
+import React from 'react';
 
-export interface ILayoutPage
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface ILayoutPage {
+  eraId: number;
   children: React.ReactNode;
 }
