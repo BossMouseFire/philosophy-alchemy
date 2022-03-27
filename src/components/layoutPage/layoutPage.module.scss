@@ -1,8 +1,19 @@
 .layout {
+  display: flex;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
   min-height: 677px;
-  background-image: url("../../assets/background.png");
+  background-image: url("../../assets/backgroundAntiquity.png");
+  transition: background-image ease-out 0.4s;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.middleAge {
+  background-image: url("../../assets/backgroundMiddleAge.png");
+}
+
+.revival {
+  background-image: url("../../assets/BackgroundRevival.png");
 }

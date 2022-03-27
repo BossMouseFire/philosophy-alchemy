@@ -1,18 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './merger.module.scss';
 import { useGlobalContext } from '../../context';
 import { Element } from '../element/element';
-import { IPosition } from '../../types/data';
+import { IElement, IPosition } from '../../types/data';
 import DataService from '../../services/DataService';
+import { urlImages } from '../../constants';
+import { IMerger } from './mergerProps';
 
-export const Merger: React.FC = () => {
+export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
   const { elements, setElements } = useGlobalContext();
+  const [resultElement, setResultElement] = useState<IElement | undefined>(undefined);
 
   useEffect(() => {
     if (elements.length === 3) {
       setElements([elements[2]]);
+      setResultElement(undefined);
     }
   }, [elements]);
+
+  useEffect(() => {
+    if (elements.length === 2) {
+      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 0);
+      if (generalElement) {
+        setResultElement(generalElement);
+        setForceUpdate((state) => !state);
+      } else {
+        setTimeout(() => {
+          setElements([elements[0]]);
+        }, 400);
+      }
+    }
+  }, [elements]);
+
+  const onClearLeftElement = () => {
+    setElements([]);
+    setResultElement(undefined);
+  };
 
   const getLeftElement = () => {
     if (elements[0]) {
@@ -24,7 +47,8 @@ export const Merger: React.FC = () => {
           ratioWidth={1}
           ratioHeight={1}
           colorStroke={'#CF0070'}
-          imageHref={'http://localhost:3000/images/test.svg'}
+          imageHref={urlImages + elements[0].icon}
+          onClick={onClearLeftElement}
         />
       );
     }
@@ -49,7 +73,7 @@ export const Merger: React.FC = () => {
           ratioHeight={1}
           position={{ x: 354, y: 38 } as IPosition}
           colorStroke={'#CF0070'}
-          imageHref={'http://localhost:3000/images/test.svg'}
+          imageHref={urlImages + elements[1].icon}
         />
       );
     }
@@ -64,23 +88,19 @@ export const Merger: React.FC = () => {
     );
   };
 
-  const getCenterElements = () => {
-    if (elements.length === 2) {
-      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 0);
-      if (generalElement) {
-        return (
-          <Element
-            name={generalElement.name}
-            isText={false}
-            ratioWidth={1}
-            ratioHeight={1}
-            position={{ x: 195, y: 38 } as IPosition}
-            colorStroke={'#CF0070'}
-            imageHref={'http://localhost:3000/images/test.svg'}
-          />
-        );
-      }
-      setElements([]);
+  const getCenterElement = () => {
+    if (resultElement) {
+      return (
+        <Element
+          name={resultElement.name}
+          isText={false}
+          ratioWidth={1}
+          ratioHeight={1}
+          position={{ x: 195, y: 38 } as IPosition}
+          colorStroke={'#CF0070'}
+          imageHref={urlImages + resultElement.icon}
+        />
+      );
     }
     return (
       <g opacity="0.7">
@@ -95,8 +115,8 @@ export const Merger: React.FC = () => {
 
   return (
     <div className={styles.mergeComponent}>
-      <svg width="391" height="75" viewBox="0 0 391 75" fill="none">
-        {getCenterElements()}
+      <svg width="391" height="75" viewBox="0 0 391 75">
+        {getCenterElement()}
         {getLeftElement()}
         {getRightElement()}
         <path
@@ -104,36 +124,42 @@ export const Merger: React.FC = () => {
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
         <path
           d="M336.825 10.6289C333.488 12.7925 330.583 15.5632 328.26 18.7984C324.274 24.449 322.175 31.2232 322.265 38.1471C322.307 41.0408 322.83 50.4486 329.973 58.7858C331.121 60.1273 340.136 70.2875 354.812 69.965C366.731 69.7027 374.401 62.7028 376.225 60.9356C385.878 51.5923 386.075 39.6563 386.075 37.7171C386.075 36.2251 385.878 23.7087 376.225 14.4987C373.656 12.0392 367.167 6.73336 353.956 5.46925C347.866 4.88449 324.32 3.22479 274.728 33.4174C263.593 40.2067 252.266 47.8989 231.474 59.2157C218.468 66.2931 208.382 71.1819 195.5 69.965C191.068 69.5351 181.612 68.5117 173.659 60.9356C171.702 59.0695 163.239 50.6163 163.381 37.2872C163.535 23.2013 173.162 14.7179 174.944 13.2087C183.29 6.1443 192.605 5.54234 195.5 5.46925"
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
         <path
           d="M353.956 9.76897C347.396 9.75828 341.037 12.0384 335.969 16.2186C334.971 17.0527 327.108 23.8506 326.119 35.1373C325.848 38.3165 326.138 41.5187 326.975 44.5967C328.665 50.6087 332.277 55.8964 337.253 59.6457C342.291 63.4946 348.502 65.4698 354.828 65.2346C361.154 64.9994 367.202 62.5682 371.942 58.3558C381.257 50.1261 381.364 38.719 381.364 37.2872C381.364 36.4272 381.086 24.2246 371.514 16.2186C365.947 11.5491 359.463 10.1989 353.956 9.76897ZM353.956 9.76897C334.47 8.21678 311.601 16.7517 274.728 37.2872C259.49 45.7748 249.371 52.1255 231.474 59.2157C219.808 63.8336 208.485 67.325 195.072 65.2354C189.127 64.3066 180.404 62.8189 174.087 55.346C167.77 47.8731 167.663 39.149 167.663 37.2872C167.759 30.6455 170.185 24.2507 174.515 19.2284C182.566 10.0399 193.71 9.76897 195.5 9.76897"
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
         <path
           d="M64.0248 13.2088C66.2369 15.6691 68.1094 18.4169 69.5922 21.3782C69.5922 21.3782 73.575 29.3499 73.4465 38.1471C73.3947 40.9167 72.9624 43.6658 72.1617 46.3166V46.3166C71.4306 49.4678 70.2782 52.5052 68.7356 55.346C67.014 58.3768 64.8486 61.1308 62.3118 63.5155C60.0377 65.6653 50.4062 74.239 36.6163 73.8348C34.5522 73.7555 32.4988 73.4966 30.4793 73.0608C27.8155 72.4933 18.5737 70.3907 10.9207 62.2256C1.3663 52.0309 1.0708 39.6907 1.0708 37.7172C1.0708 36.3799 1.20356 20.8279 13.4903 10.1989C22.3424 2.53685 32.9461 1.37592 37.0445 1.16954C76.5257 -0.812635 116.272 29.1177 116.272 29.1177C164.336 59.4608 172.901 75.2838 195.5 73.8348C199.5 73.5768 211.393 72.9233 220.767 63.9454C231.778 53.3982 231.902 39.0716 231.902 37.2872C231.757 23.9022 224.262 15.178 222.48 13.2088C211.975 1.59951 197.886 1.19533 195.5 1.16954"
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
         <path
           d="M54.175 10.6289C57.5121 12.7925 60.417 15.5632 62.7402 18.7984C66.7265 24.449 68.8256 31.2232 68.7358 38.1471C68.693 41.0408 68.1705 50.4486 61.0272 58.7858C59.8794 60.1273 50.8646 70.2875 36.1882 69.965C24.2697 69.7027 16.5996 62.7028 14.7752 60.9356C5.12229 51.5923 4.92529 39.6563 4.92529 37.7171C4.92529 36.2251 5.12229 23.7087 14.7752 14.4987C17.3448 12.0392 23.8329 6.73336 37.0447 5.46925C43.1345 4.88449 66.6802 3.22479 116.273 33.4174C127.407 40.2067 138.735 47.8989 159.527 59.2157C172.533 66.2931 182.618 71.1819 195.5 69.965C199.937 69.5351 209.389 68.5117 217.342 60.9356C219.299 59.0695 227.765 50.6163 227.62 37.2872C227.466 23.2013 217.838 14.7179 216.057 13.2087C207.714 6.1443 198.395 5.54234 195.5 5.46925"
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
         <path
           d="M37.0443 9.76897C43.6037 9.75828 49.9625 12.0384 55.0311 16.2186C56.029 17.0527 63.8961 23.8506 64.8811 35.1373C65.1518 38.3165 64.8619 41.5187 64.0246 44.5967C62.3362 50.6095 58.7245 55.8977 53.7464 59.6457C48.709 63.4946 42.4978 65.4698 36.1719 65.2346C29.8461 64.9994 23.7974 62.5682 19.0574 58.3558C9.74281 50.1261 9.63574 38.719 9.63574 37.2872C9.63574 36.4272 9.91839 24.2246 19.4857 16.2186C25.053 11.5491 31.5369 10.1989 37.0443 9.76897ZM37.0443 9.76897C56.53 8.21678 79.3991 16.7517 116.272 37.2872C131.514 45.7748 141.629 52.1255 159.526 59.2157C171.192 63.8336 182.515 67.325 195.928 65.2354C201.872 64.3066 210.596 62.8189 216.913 55.346C223.23 47.8731 223.337 39.149 223.337 37.2872C223.243 30.6451 220.816 24.2495 216.485 19.2284C208.433 10.0399 197.29 9.76897 195.5 9.76897"
           stroke="#FF0000"
           strokeWidth="2"
           strokeLinejoin="round"
+          fill="none"
         />
       </svg>
     </div>

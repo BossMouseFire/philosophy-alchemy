@@ -30,15 +30,38 @@ class DataService {
     const childrenToOne = parentOne.children;
     const childrenToTwo = parentTwo.children;
 
-    const generalChildId: number | undefined = childrenToOne.find((id) =>
+    let generalChild: IElement | undefined;
+
+    const generalChildren: number[] | undefined = childrenToOne.filter((id) =>
       childrenToTwo.includes(id)
     );
 
-    if (!generalChildId) {
+    if (!generalChildren) {
       return undefined;
     }
 
-    const generalChild = this.getElement(idEra, generalChildId);
+    if (
+      generalChildren.length === childrenToOne.length &&
+      generalChildren.length === childrenToTwo.length
+    ) {
+      for (let i = 0; i < generalChildren.length; i++) {
+        const id = generalChildren[i];
+        const temp = this.getElement(idEra, id);
+        if (temp) {
+          if (temp.parents.length === 1 && temp.parents[0] === parentOne.id) {
+            generalChild = temp;
+            break;
+          }
+        }
+      }
+    } else {
+      const generalChildId = childrenToOne.find((id) => childrenToTwo.includes(id));
+
+      if (!generalChildId) {
+        return undefined;
+      }
+      generalChild = this.getElement(idEra, generalChildId);
+    }
 
     if (!generalChild) {
       return undefined;

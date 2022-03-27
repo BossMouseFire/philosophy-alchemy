@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LayoutPage, Game } from '../../components';
-import styles from './mainPage.module.scss';
 import { History } from '../../components/history/history';
 
 export const MainPage: React.FC = () => {
+  const [eraId, setEraId] = useState<number>(0);
   return (
-    <LayoutPage className={styles.mainPage}>
+    <LayoutPage eraId={eraId}>
       <History />
-      <Game />
+      <Game eraId={eraId} setEraId={setEraId} />
     </LayoutPage>
   );
 };

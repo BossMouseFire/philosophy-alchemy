@@ -3,15 +3,16 @@ import { radius } from './constants';
 
 export const changeCoordinates = (
   positionStart: IPosition,
-  positionEnd: IPosition
+  positionEnd: IPosition,
+  average: number
 ): IPosition[] => {
   const positionStartNew = positionStart;
   const positionEndNew = positionEnd;
   const hypotenuse = Math.sqrt(
     Math.pow(positionEnd.x - positionStart.x, 2) + Math.pow(positionEnd.y - positionStart.y, 2)
   );
-  const legB = ((positionEnd.x - positionStart.x) * radius) / hypotenuse;
-  const legA = ((positionEnd.y - positionStart.y) * radius) / hypotenuse;
+  const legB = ((positionEnd.x - positionStart.x) * radius * average) / hypotenuse;
+  const legA = ((positionEnd.y - positionStart.y) * radius * average) / hypotenuse;
 
   positionStartNew.x += legB;
   positionStartNew.y += legA;
