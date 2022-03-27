@@ -24,8 +24,8 @@
             42
           ],
           "status": "start",
-          "posX": 100,
-          "posY": 100,
+          "posX": 450,
+          "posY": 65,
           "enabled": true
         },
         {
@@ -40,8 +40,8 @@
             42
           ],
           "status": "start",
-          "posX": 200,
-          "posY": 200,
+          "posX": 602,
+          "posY": 160,
           "enabled": true
         },
         {
@@ -57,8 +57,8 @@
             18
           ],
           "status": "start",
-          "posX": 150,
-          "posY": 300,
+          "posX": 582,
+          "posY": 343,
           "enabled": true
         },
         {
@@ -72,8 +72,8 @@
             24
           ],
           "status": "start",
-          "posX": 400,
-          "posY": 500,
+          "posX": 318,
+          "posY": 343,
           "enabled": true
         },
         {
@@ -89,8 +89,8 @@
             34
           ],
           "status": "start",
-          "posX": 250,
-          "posY": 75,
+          "posX": 296,
+          "posY": 160,
           "enabled": true
         },
         {
@@ -107,8 +107,8 @@
             44
           ],
           "status": "usual",
-          "posX": 70,
-          "posY": 80,
+          "posX": 540,
+          "posY": 50,
           "enabled": false
         },
         {
@@ -122,8 +122,8 @@
           ],
           "children": [],
           "status": "usual",
-          "posX": 470,
-          "posY": 440,
+          "posX": 630,
+          "posY": 300,
           "enabled": false
         },
         {
@@ -141,8 +141,8 @@
             32
           ],
           "status": "usual",
-          "posX": 430,
-          "posY": 120,
+          "posX": 331,
+          "posY": 112,
           "enabled": false
         },
         {
@@ -160,8 +160,8 @@
             38
           ],
           "status": "usual",
-          "posX": 390,
-          "posY": 390,
+          "posX": 230,
+          "posY": 125,
           "enabled": false
         },
         {
@@ -177,8 +177,8 @@
             11
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 280,
+          "posY": 75,
           "enabled": false
         },
         {
@@ -192,8 +192,8 @@
           ],
           "children": [],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 410,
+          "posY": 20,
           "enabled": false
         },
         {
@@ -212,8 +212,8 @@
             55
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 450,
+          "posY": 234,
           "enabled": false
         },
         {
@@ -229,8 +229,8 @@
             13
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 490,
+          "posY": 20,
           "enabled": false
         },
         {
@@ -248,8 +248,8 @@
             50
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 250,
+          "posY": 20,
           "enabled": false
         },
         {
@@ -265,8 +265,8 @@
             49
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 320,
+          "posY": 25,
           "enabled": false
         },
         {
@@ -283,8 +283,8 @@
             46
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 270,
+          "posY": 300,
           "enabled": false
         },
         {
@@ -302,8 +302,8 @@
             21
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 620,
+          "posY": 430,
           "enabled": false
         },
         {
@@ -321,8 +321,8 @@
             48
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 785,
+          "posY": 290,
           "enabled": false
         },
         {
@@ -342,8 +342,8 @@
             34
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 535,
+          "posY": 450,
           "enabled": false
         },
         {
@@ -359,8 +359,8 @@
             28
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 762,
+          "posY": 350,
           "enabled": false
         },
         {
@@ -376,8 +376,8 @@
             23
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 800,
+          "posY": 225,
           "enabled": false
         },
         {
@@ -393,8 +393,8 @@
             32
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 365,
+          "posY": 450,
           "enabled": false
         },
         {
@@ -410,8 +410,8 @@
             30
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 450,
+          "posY": 465,
           "enabled": false
         },
         {
@@ -427,8 +427,8 @@
             45
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 650,
+          "posY": 20,
           "enabled": false
         },
         {
@@ -444,8 +444,8 @@
             25
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 410,
+          "posY": 400,
           "enabled": false
         },
         {
@@ -461,8 +461,8 @@
             27
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 404,
+          "posY": 120,
           "enabled": false
         },
         {
@@ -482,8 +482,8 @@
             54
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 220,
+          "posY": 225,
           "enabled": false
         },
         {
@@ -497,8 +497,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 138,
+          "posY": 100,
           "enabled": false
         },
         {
@@ -514,8 +514,8 @@
             29
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 620,
+          "posY": 75,
           "enabled": false
         },
         {
@@ -532,8 +532,8 @@
             40
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 670,
+          "posY": 125,
           "enabled": false
         },
         {
@@ -549,8 +549,8 @@
             36
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 490,
+          "posY": 400,
           "enabled": false
         },
         {
@@ -567,8 +567,8 @@
             49
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 785,
+          "posY": 160,
           "enabled": false
         },
         {
@@ -586,8 +586,8 @@
             47
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 700,
+          "posY": 400,
           "enabled": false
         },
         {
@@ -603,8 +603,8 @@
             47
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 280,
+          "posY": 430,
           "enabled": false
         },
         {
@@ -620,8 +620,8 @@
             38
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 200,
+          "posY": 400,
           "enabled": false
         },
         {
@@ -635,8 +635,8 @@
           ],
           "children": [],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 559,
+          "posY": 178,
           "enabled": false
         },
         {
@@ -652,8 +652,8 @@
             54
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 517,
+          "posY": 331,
           "enabled": false
         },
         {
@@ -667,8 +667,8 @@
           ],
           "children": [],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 450,
+          "posY": 356,
           "enabled": false
         },
         {
@@ -682,8 +682,8 @@
           ],
           "children": [],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 335,
+          "posY": 272,
           "enabled": false
         },
         {
@@ -699,8 +699,8 @@
             53
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 341,
+          "posY": 178,
           "enabled": false
         },
         {
@@ -716,8 +716,8 @@
             55
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 360,
+          "posY": 50,
           "enabled": false
         },
         {
@@ -733,8 +733,8 @@
             50
           ],
           "status": "term",
-          "posX": 0,
-          "posY": 0,
+          "posX": 580,
+          "posY": 25,
           "enabled": false
         },
         {
@@ -750,8 +750,8 @@
             43
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 564,
+          "posY": 109,
           "enabled": false
         },
         {
@@ -768,8 +768,8 @@
             48
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 762,
+          "posY": 100,
           "enabled": false
         },
         {
@@ -785,8 +785,8 @@
             45
           ],
           "status": "usual",
-          "posX": 0,
-          "posY": 0,
+          "posX": 680,
+          "posY": 225,
           "enabled": false
         },
         {
@@ -802,8 +802,8 @@
             51
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 566,
+          "posY": 272,
           "enabled": false
         },
         {
@@ -817,8 +817,8 @@
           ],
           "children": [],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 375,
+          "posY": 331,
           "enabled": false
         },
         {
@@ -832,8 +832,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 385,
+          "posY": 234,
           "enabled": false
         },
         {
@@ -847,8 +847,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 450,
+          "posY": 300,
           "enabled": false
         },
         {
@@ -862,8 +862,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 450,
+          "posY": 168,
           "enabled": false
         },
         {
@@ -877,8 +877,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 515,
+          "posY": 234,
           "enabled": false
         },
         {
@@ -892,8 +892,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 100,
+          "posY": 225,
           "enabled": false
         },
         {
@@ -907,8 +907,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 115,
+          "posY": 160,
           "enabled": false
         },
         {
@@ -922,8 +922,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 138,
+          "posY": 350,
           "enabled": false
         },
         {
@@ -937,8 +937,8 @@
           ],
           "children": [],
           "status": "direction",
-          "posX": 0,
-          "posY": 0,
+          "posX": 115,
+          "posY": 290,
           "enabled": false
         },
         {
@@ -954,8 +954,8 @@
             52
           ],
           "status": "philosopher",
-          "posX": 0,
-          "posY": 0,
+          "posX": 495,
+          "posY": 120,
           "enabled": false
         }
       ]

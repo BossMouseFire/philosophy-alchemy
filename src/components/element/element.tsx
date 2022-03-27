@@ -40,7 +40,7 @@ export const Element: React.FC<ElementProps> = ({
       {isText && (
         <text
           x={position.x * ratioWidth}
-          y={position.y * ratioHeight + radius * 2.1 * average}
+          y={position.y * ratioHeight + radius * 1.7 * average}
           className={styles.text}
         >
           {name}
