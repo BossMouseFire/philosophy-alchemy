@@ -19,13 +19,21 @@ export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
   const ratioWidth = svgWidth / svgSize.width;
   const ratioHeight = svgHeight / svgSize.height;
 
+  const changeSize = () => {
+    const svgElement = svgRef.current;
+    setSvgWidth(svgElement.width.baseVal.value);
+    setSvgHeight(svgElement.height.baseVal.value);
+  };
+
+  useEffect(() => {
+    changeSize();
+  }, []);
+
   useEffect(() => {
     window.addEventListener(
       `resize`,
       () => {
-        const svgElement = svgRef.current;
-        setSvgWidth(svgElement.width.baseVal.value);
-        setSvgHeight(svgElement.height.baseVal.value);
+        changeSize();
       },
       false
     );

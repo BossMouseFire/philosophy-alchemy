@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './game.module.scss';
 import { Merger } from '../merger/merger';
 import { GameWrapper } from './gameWrapper';
@@ -10,9 +10,10 @@ interface IGame {
 }
 
 export const Game: React.FC<IGame> = ({ eraId, setEraId }) => {
+  const [, setForceUpdate] = useState<boolean>(false);
   return (
     <div className={styles.gameComponent}>
-      <Merger />
+      <Merger setForceUpdate={setForceUpdate} />
       <GameWrapper eraId={eraId} />
       <GameActions eraId={eraId} setEraId={setEraId} />
     </div>

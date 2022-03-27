@@ -5,6 +5,7 @@ import { changeCoordinates } from '../../utilities';
 import { IElementGame } from './elementGameProps';
 import { Element } from '../element/element';
 import { useGlobalContext } from '../../context';
+import { urlImages } from '../../constants';
 
 export const ElementGame: React.FC<IElementGame> = ({
   element,
@@ -15,7 +16,7 @@ export const ElementGame: React.FC<IElementGame> = ({
   ratioWidth,
   ratioHeight,
 }) => {
-  const { posX, posY, name, children, parents } = element;
+  const { posX, posY, name, children, parents, icon } = element;
   const { elements, setElements } = useGlobalContext();
 
   const getLinesArray = (arrayIds: number[]) => {
@@ -60,9 +61,7 @@ export const ElementGame: React.FC<IElementGame> = ({
   };
 
   const addElementToMerger = () => {
-    if (elements.indexOf(element) === -1) {
-      setElements(() => [...elements, element]);
-    }
+    setElements(() => [...elements, element]);
   };
 
   return (
@@ -70,7 +69,7 @@ export const ElementGame: React.FC<IElementGame> = ({
       name={name}
       position={{ x: posX, y: posY } as IPosition}
       colorStroke={colorStroke}
-      imageHref={'http://localhost:3000/images/test.svg'}
+      imageHref={urlImages + icon}
       isText={true}
       ratioHeight={ratioHeight}
       ratioWidth={ratioWidth}
