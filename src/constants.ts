@@ -1,5 +1,5 @@
-export const radius = 19;
-export const sizeImage = 23;
+export const radius = 15;
+export const sizeImage = 18;
 export const svgSize = {
   width: 900,
   height: 500,
