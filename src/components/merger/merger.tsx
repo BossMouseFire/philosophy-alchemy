@@ -4,7 +4,7 @@ import { useGlobalContext } from '../../context';
 import { Element } from '../element/element';
 import { IElement, IPosition } from '../../types/data';
 import DataService from '../../services/DataService';
-import { urlImages } from '../../constants';
+import { colors, radius, sizeImage, urlImages } from '../../constants';
 import { IMerger } from './mergerProps';
 
 export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
@@ -12,6 +12,9 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
   const [resultElement, setResultElement] = useState<IElement | undefined>(undefined);
 
   useEffect(() => {
+    if (!elements.length) {
+      setResultElement(undefined);
+    }
     if (elements.length === 3) {
       setElements([elements[2]]);
       setResultElement(undefined);
@@ -42,11 +45,13 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
       return (
         <Element
           name={elements[0].name}
+          radius={radius.merger}
+          sizeImage={sizeImage.merger}
           isText={false}
           position={{ x: 37, y: 38 } as IPosition}
           ratioWidth={1}
           ratioHeight={1}
-          colorStroke={'#CF0070'}
+          colorStroke={colors.status.usual}
           imageHref={urlImages + elements[0].icon}
           onClick={onClearLeftElement}
         />
@@ -68,11 +73,13 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
       return (
         <Element
           name={elements[1].name}
+          radius={radius.merger}
+          sizeImage={sizeImage.merger}
           isText={false}
           ratioWidth={1}
           ratioHeight={1}
           position={{ x: 354, y: 38 } as IPosition}
-          colorStroke={'#CF0070'}
+          colorStroke={colors.status.usual}
           imageHref={urlImages + elements[1].icon}
         />
       );
@@ -93,11 +100,13 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
       return (
         <Element
           name={resultElement.name}
+          radius={radius.merger}
+          sizeImage={sizeImage.merger}
           isText={false}
           ratioWidth={1}
           ratioHeight={1}
           position={{ x: 195, y: 38 } as IPosition}
-          colorStroke={'#CF0070'}
+          colorStroke={colors.status.usual}
           imageHref={urlImages + resultElement.icon}
         />
       );

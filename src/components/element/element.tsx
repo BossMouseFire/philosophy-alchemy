@@ -1,5 +1,4 @@
 import React from 'react';
-import { radius, sizeImage } from '../../constants';
 import styles from './element.module.scss';
 import { ElementProps } from './elementProps';
 
@@ -8,6 +7,8 @@ export const Element: React.FC<ElementProps> = ({
   position,
   colorStroke,
   imageHref,
+  radius,
+  sizeImage,
   isText,
   ratioHeight,
   ratioWidth,
@@ -40,7 +41,7 @@ export const Element: React.FC<ElementProps> = ({
       {isText && (
         <text
           x={position.x * ratioWidth}
-          y={position.y * ratioHeight + radius * 2.1 * average}
+          y={position.y * ratioHeight + radius * 1.7 * average}
           className={styles.text}
         >
           {name}
