@@ -3,7 +3,7 @@ import styles from './game.module.scss';
 import { Line } from '../line/line';
 import { ElementGame } from '../elementGame/elementGame';
 import DataService from '../../services/DataService';
-import { ILinePos } from '../../types/data';
+import { ILinePos, Status } from '../../types/data';
 import { IGameWrapper } from './gameProps';
 import { colors, svgSize } from '../../constants';
 
@@ -42,6 +42,23 @@ export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
     };
   }, []);
 
+  const getColorElement = (color: Status): string => {
+    const { status } = colors;
+    switch (color) {
+      case 'start':
+        return status.start;
+      case 'direction':
+        return status.direction;
+      case 'usual':
+        return status.usual;
+      case 'philosopher':
+        return status.philosopher;
+      case 'term':
+        return status.term;
+      case 'old':
+        return status.old;
+    }
+  };
   return (
     <div className={styles.gameWrapper}>
       <svg width={'100%'} height={'100%'} ref={svgRef}>
@@ -70,7 +87,7 @@ export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
                 key={element.id}
                 eraId={eraId}
                 element={element}
-                colorStroke={colors.element}
+                colorStroke={getColorElement(element.status)}
                 ratioWidth={ratioWidth}
                 ratioHeight={ratioHeight}
                 setLinesChildren={setLinesChildren}

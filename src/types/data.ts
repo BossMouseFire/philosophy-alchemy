@@ -5,7 +5,7 @@ export interface IElement {
   icon: string;
   parents: number[];
   children: number[];
-  status: string;
+  status: Status;
   posX: number;
   posY: number;
   enabled: boolean;
@@ -32,3 +32,5 @@ export interface ILinePos {
   positionStart: IPosition;
   positionEnd: IPosition;
 }
+
+export type Status = 'start' | 'usual' | 'term' | 'philosopher' | 'direction' | 'old';

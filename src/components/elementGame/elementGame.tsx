@@ -5,7 +5,7 @@ import { changeCoordinates } from '../../utilities';
 import { IElementGame } from './elementGameProps';
 import { Element } from '../element/element';
 import { useGlobalContext } from '../../context';
-import { urlImages } from '../../constants';
+import { radius, sizeImage, urlImages } from '../../constants';
 
 export const ElementGame: React.FC<IElementGame> = ({
   element,
@@ -69,6 +69,8 @@ export const ElementGame: React.FC<IElementGame> = ({
       name={name}
       position={{ x: posX, y: posY } as IPosition}
       colorStroke={colorStroke}
+      radius={radius.game}
+      sizeImage={sizeImage.game}
       imageHref={urlImages + icon}
       isText={true}
       ratioHeight={ratioHeight}

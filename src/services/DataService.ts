@@ -70,6 +70,20 @@ class DataService {
       return undefined;
     }
     generalChild.enabled = true;
+
+    const { eraArray } = this.data;
+    for (let i = 1; i < eraArray.length; i++) {
+      const tempEra = this.getEraById(i);
+      if (tempEra) {
+        const { elements } = tempEra;
+        for (const element of elements) {
+          if (element.name === generalChild.name) {
+            element.enabled = true;
+            break;
+          }
+        }
+      }
+    }
     return generalChild;
   }
 }
