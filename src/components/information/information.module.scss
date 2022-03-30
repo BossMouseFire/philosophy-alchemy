@@ -5,7 +5,7 @@
   height: 80%;
   color: white;
   .title {
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 300;
     text-align: center;
     letter-spacing: 5px;
@@ -17,7 +17,13 @@
     letter-spacing: 7px;
   }
   .description {
-    font-size: 14px;
-    font-weight: 300;
+    height: 75%;
+    overflow: scroll;
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      white-space: pre-line;
+      vertical-align: bottom;
+    }
   }
 }

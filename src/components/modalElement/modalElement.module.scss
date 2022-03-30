@@ -11,8 +11,10 @@
   padding: 10px 50px 10px;
   color: var(--white-color);
   font-weight: 300;
+  opacity: 0;
+  transition: opacity ease-out 0.5s;
   .titleModal {
-    font-size: 26px;
+    font-size: 25px;
   }
   .viewElem {
     display: flex;
@@ -30,4 +32,8 @@
   .descriptionElem {
     font-size: 14px;
   }
+}
+
+.activeModal {
+  opacity: 1;
 }
