@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styles from './merger.module.scss';
 import { useGlobalContext } from '../../context';
 import { Element } from '../element/element';
-import { IElement, IPosition } from '../../types/data';
+import { IElement, IHistoryComponent, IPosition } from '../../types/data';
 import DataService from '../../services/DataService';
 import { colors, radius, sizeImage, urlImages } from '../../constants';
 import { IMerger } from './mergerProps';
 import { ModalElement } from '../modalElement/modalElement';
 
 export const Merger: React.FC<IMerger> = ({ eraId, setForceUpdate }) => {
-  const { elements, setElements } = useGlobalContext();
+  const { elements, setElements, setHistory } = useGlobalContext();
   const [resultElement, setResultElement] = useState<IElement | undefined>(undefined);
   const [activeModal, setActiveModal] = useState<boolean>(false);
 
@@ -27,8 +27,13 @@ export const Merger: React.FC<IMerger> = ({ eraId, setForceUpdate }) => {
     if (elements.length === 2) {
       const generalElement = DataService.checkGeneralChild(elements[0], elements[1], eraId);
       if (generalElement) {
+        const history: IHistoryComponent = {
+          title: generalElement.name,
+          description: generalElement.description,
+        };
         setResultElement(generalElement);
         setActiveModal(true);
+        setHistory(history);
         setForceUpdate((state) => !state);
       } else {
         setTimeout(() => {
@@ -180,7 +185,6 @@ export const Merger: React.FC<IMerger> = ({ eraId, setForceUpdate }) => {
           setActiveModal={setActiveModal}
           icon={resultElement.icon}
           name={resultElement.name}
-          description={resultElement.description}
         />
       )}
     </div>

@@ -3,13 +3,16 @@ import styles from './game.module.scss';
 import { Line } from '../line/line';
 import { ElementGame } from '../elementGame/elementGame';
 import DataService from '../../services/DataService';
-import { ILinePos, Status } from '../../types/data';
+import { IHistoryComponent, ILinePos, Status } from '../../types/data';
 import { IGameWrapper } from './gameProps';
 import { colors, svgSize } from '../../constants';
+import { useGlobalContext } from '../../context';
 
 export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
   const [linesChildren, setLinesChildren] = useState<ILinePos[]>([]);
   const [linesParent, setLinesParent] = useState<ILinePos[]>([]);
+  const { setHistory } = useGlobalContext();
+
   const svgRef = useRef() as React.MutableRefObject<SVGSVGElement>;
   const era = DataService.getEraById(eraId);
 
@@ -24,6 +27,17 @@ export const GameWrapper: React.FC<IGameWrapper> = ({ eraId }) => {
     setSvgWidth(svgElement.width.baseVal.value);
     setSvgHeight(svgElement.height.baseVal.value);
   };
+
+  useEffect(() => {
+    if (era) {
+      const history: IHistoryComponent = {
+        title: era?.name,
+        years: era.years,
+        description: era.description,
+      };
+      setHistory(history);
+    }
+  }, [era]);
 
   useEffect(() => {
     changeSize();

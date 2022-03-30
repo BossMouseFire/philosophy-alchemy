@@ -1,24 +1,14 @@
 import React from 'react';
 import styles from './modalElement.module.scss';
 import { urlImages } from '../../constants';
-import { refactorText } from '../../utilities';
+import { IModalContentElement } from './modalProps';
 
-interface IModalContentElement {
-  icon: string;
-  name: string;
-  description: string;
-}
-
-export const ModalContentElement: React.FC<IModalContentElement> = ({
-  icon,
-  description,
-  name,
-}) => {
+export const ModalContentElement: React.FC<IModalContentElement> = ({ icon, name }) => {
   return (
     <div className={styles.inner}>
       <span className={styles.titleModal}>Вы открыли новый элемент!</span>
       <div className={styles.viewElem}>
-        <img src={urlImages + 'philosof.svg'} />
+        <img src={urlImages + icon} />
         <span>{name}</span>
       </div>
     </div>
