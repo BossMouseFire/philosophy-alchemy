@@ -18,10 +18,9 @@ export const ModalContentElement: React.FC<IModalContentElement> = ({
     <div className={styles.inner}>
       <span className={styles.titleModal}>Вы открыли новый элемент!</span>
       <div className={styles.viewElem}>
-        <img src={urlImages + icon} />
+        <img src={urlImages + 'philosof.svg'} />
         <span>{name}</span>
       </div>
-      <span className={styles.descriptionElem}>{refactorText(description)}</span>
     </div>
   );
 };
