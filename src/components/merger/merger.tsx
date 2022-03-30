@@ -8,7 +8,7 @@ import { colors, radius, sizeImage, urlImages } from '../../constants';
 import { IMerger } from './mergerProps';
 import { ModalElement } from '../modalElement/modalElement';
 
-export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
+export const Merger: React.FC<IMerger> = ({ eraId, setForceUpdate }) => {
   const { elements, setElements } = useGlobalContext();
   const [resultElement, setResultElement] = useState<IElement | undefined>(undefined);
   const [activeModal, setActiveModal] = useState<boolean>(false);
@@ -25,7 +25,7 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
 
   useEffect(() => {
     if (elements.length === 2) {
-      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 0);
+      const generalElement = DataService.checkGeneralChild(elements[0], elements[1], eraId);
       if (generalElement) {
         setResultElement(generalElement);
         setActiveModal(true);
