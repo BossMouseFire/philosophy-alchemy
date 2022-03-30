@@ -25,3 +25,20 @@ export const changeCoordinates = (
 
   return [positionStartNew, positionEndNew];
 };
+
+export const refactorText = (text: string) => {
+  let tempText = '';
+
+  const arrayPartsText = text.split(' ');
+
+  for (let i = 0; i < arrayPartsText.length; i++) {
+    if ((tempText + arrayPartsText[i]).length <= 700) {
+      tempText += ` ${arrayPartsText[i]} `;
+    } else {
+      tempText += '...';
+      break;
+    }
+  }
+
+  return tempText;
+};

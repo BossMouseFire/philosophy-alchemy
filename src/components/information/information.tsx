@@ -6,7 +6,7 @@ export const Information: React.FC<IAboutComponent> = ({ title, years, descripti
   return (
     <div className={styles.aboutComponent}>
       <span className={styles.title}>{title}</span>
-      <span className={styles.years}>{years}</span>
+      {years && <span className={styles.years}>{years}</span>}
       <span className={styles.description}>{description}</span>
     </div>
   );

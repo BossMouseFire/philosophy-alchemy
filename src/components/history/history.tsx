@@ -1,30 +1,21 @@
 import React from 'react';
 import styles from './history.module.scss';
 import { Information } from '../information/information';
+import { useGlobalContext } from '../../context';
 
 export const History: React.FC = () => {
+  const { history } = useGlobalContext();
+  const { title, years, description } = history;
+
   return (
     <div className={styles.history}>
       <div className={styles.titleComponent}>
         <span>АЛХИМИЯ ФИЛОСОФИИ</span>
       </div>
-      <Information
-        title={'Античная философия'}
-        years={'Конец VII в до н.э. - 6 в. н.э.'}
-        description={
-          'Родина философии как самостоятельной и особой сферы духовной активности – Греция. В ней\n' +
-          '            сложились уникальные социокультурные условия ее зарождения, позволившие мыслителям\n' +
-          '            древности преодолеть традиционную мифопоэтическую картину мира и постичь тайны бытия с\n' +
-          '            помощью разума. Более тысячи лет просуществовала античная традиция философствования (до\n' +
-          '            закрытия всех греческих философских школ как языческих по указу императора Византии\n' +
-          '            Юстиниана). Античное миросозерцание своим центром полагает космос, сменивший хаос\n' +
-          '            благодаря богам, принесшим в мир логос. Описывая космос, мы опираемся на понятия\n' +
-          '            гармонии, меры порядка; греческий космос одушевленный, разумный, чувственно-телесный,\n' +
-          '            живой. Он, подобно куполу, замкнут; здесь живут боги и люди. Вечные циклы определяют\n' +
-          '            жизнь космоса: рождение – расцвет – распад – гибель и снова рождение.'
-        }
-      />
-      <div className={styles.actions}>fdfd</div>
+      <Information title={title} years={years} description={description} />
+      <div className={styles.actions}>
+        <button>О проекте</button>
+      </div>
     </div>
   );
 };

@@ -34,3 +34,9 @@ export interface ILinePos {
 }
 
 export type Status = 'start' | 'usual' | 'term' | 'philosopher' | 'direction' | 'old';
+
+export interface IHistoryComponent {
+  title: string;
+  years?: string;
+  description: string;
+}
