@@ -13,7 +13,7 @@ export const Game: React.FC<IGame> = ({ eraId, setEraId }) => {
   const [, setForceUpdate] = useState<boolean>(false);
   return (
     <div className={styles.gameComponent}>
-      <Merger setForceUpdate={setForceUpdate} />
+      <Merger eraId={eraId} setForceUpdate={setForceUpdate} />
       <GameWrapper eraId={eraId} />
       <GameActions eraId={eraId} setEraId={setEraId} />
     </div>
