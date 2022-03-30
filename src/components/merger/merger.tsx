@@ -6,10 +6,12 @@ import { IElement, IPosition } from '../../types/data';
 import DataService from '../../services/DataService';
 import { colors, radius, sizeImage, urlImages } from '../../constants';
 import { IMerger } from './mergerProps';
+import { ModalElement } from '../modalElement/modalElement';
 
 export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
   const { elements, setElements } = useGlobalContext();
   const [resultElement, setResultElement] = useState<IElement | undefined>(undefined);
+  const [activeModal, setActiveModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (!elements.length) {
@@ -26,6 +28,7 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
       const generalElement = DataService.checkGeneralChild(elements[0], elements[1], 0);
       if (generalElement) {
         setResultElement(generalElement);
+        setActiveModal(true);
         setForceUpdate((state) => !state);
       } else {
         setTimeout(() => {
@@ -171,6 +174,15 @@ export const Merger: React.FC<IMerger> = ({ setForceUpdate }) => {
           fill="none"
         />
       </svg>
+      {resultElement && (
+        <ModalElement
+          activeModal={activeModal}
+          setActiveModal={setActiveModal}
+          icon={resultElement.icon}
+          name={resultElement.name}
+          description={resultElement.description}
+        />
+      )}
     </div>
   );
 };

@@ -103,7 +103,9 @@ select {
 }
 
 :root {
-    --title-color: #FF0000;
+    --red-color: #FF0000;
     --white-color: white;
     --light-grey-color: rgba(255, 255, 255, 0.25);
+    --light-white-color: rgba(255, 255, 255, 0.7);
+    --medium-black: rgba(0, 0, 0, 0.75);
 }

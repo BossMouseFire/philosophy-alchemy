@@ -24,7 +24,9 @@ export const History: React.FC = () => {
           '            жизнь космоса: рождение – расцвет – распад – гибель и снова рождение.'
         }
       />
-      <div className={styles.actions}>fdfd</div>
+      <div className={styles.actions}>
+        <button>О проекте</button>
+      </div>
     </div>
   );
 };
