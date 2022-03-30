@@ -35,7 +35,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    font-family: Roboto, sans-serif;
+    font-family: Fiorina, sans-serif;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -79,26 +79,26 @@ select {
 }
 
 @font-face {
-    font-family: Roboto;
-    src: local("Roboto"), url("./fonts/Roboto-Light.ttf") format("truetype");
+    font-family: Fiorina;
+    src: local("Fiorina"), url("./fonts/FiorinaText-Light.ttf") format("truetype");
     font-weight: 300;
 }
 
 @font-face {
-    font-family: Roboto;
-    src: local("Roboto"), url("./fonts/Roboto-Regular.ttf") format("truetype");
+    font-family: Fiorina;
+    src: local("Fiorina"), url("./fonts/FiorinaTitle-Light.ttf") format("truetype");
     font-weight: normal;
 }
 
 @font-face {
-    font-family: Roboto;
-    src: local("Roboto"), url("./fonts/Roboto-Medium.ttf") format("truetype");
+    font-family: Fiorina;
+    src: local("Fiorina"), url("./fonts/FiorinaSubhead-Light.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
-    font-family: Roboto;
-    src: local("Roboto"), url("./fonts/Roboto-Bold.ttf") format("truetype");
+    font-family: Fiorina;
+    src: local("Fiorina"), url("./fonts/FiorinaGrande-Light.ttf") format("truetype");
     font-weight: bold;
 }
 
