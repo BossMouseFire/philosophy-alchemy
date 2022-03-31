@@ -1,5 +1,5 @@
 import React from 'react';
-import { ILinePos, IPosition } from '../../types/data';
+import { IHistoryComponent, ILinePos, IPosition } from '../../types/data';
 import DataService from '../../services/DataService';
 import { changeCoordinates } from '../../utilities';
 import { IElementGame } from './elementGameProps';
@@ -17,7 +17,7 @@ export const ElementGame: React.FC<IElementGame> = ({
   ratioHeight,
 }) => {
   const { posX, posY, name, children, parents, icon } = element;
-  const { elements, setElements } = useGlobalContext();
+  const { elements, setElements, setHistory } = useGlobalContext();
 
   const getLinesArray = (arrayIds: number[]) => {
     const result: ILinePos[] = [];
@@ -51,6 +51,11 @@ export const ElementGame: React.FC<IElementGame> = ({
   };
 
   const addLinesOfElements = () => {
+    const history: IHistoryComponent = {
+      title: element.name,
+      description: element.description,
+    };
+    setHistory(history);
     setLinesChildren(getLinesArray(children));
     setLinesParent(getLinesArray(parents));
   };

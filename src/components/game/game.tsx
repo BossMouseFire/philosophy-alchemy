@@ -3,13 +3,9 @@ import styles from './game.module.scss';
 import { Merger } from '../merger/merger';
 import { GameWrapper } from './gameWrapper';
 import { GameActions } from './gameActions';
+import { IGameProps } from './gameProps';
 
-interface IGame {
-  eraId: number;
-  setEraId: React.Dispatch<React.SetStateAction<number>>;
-}
-
-export const Game: React.FC<IGame> = ({ eraId, setEraId }) => {
+export const Game: React.FC<IGameProps> = ({ eraId, setEraId }) => {
   const [, setForceUpdate] = useState<boolean>(false);
   return (
     <div className={styles.gameComponent}>
