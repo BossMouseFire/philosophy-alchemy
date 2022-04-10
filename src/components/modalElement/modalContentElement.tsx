@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './modalElement.module.scss';
 import { urlImages } from '../../constants';
-import { IModalContentElement } from './modalProps';
+import { IModalContentElement } from './modalElementProps';
 
 export const ModalContentElement: React.FC<IModalContentElement> = ({ icon, name }) => {
   const refElement = useRef() as React.MutableRefObject<HTMLDivElement>;
