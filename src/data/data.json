@@ -1142,7 +1142,7 @@
           "status": "old",
           "posX": 200,
           "posY": 360,
-          "enabled": false
+          "enabled": true
         },
         {
           "id": 11,
