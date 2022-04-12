@@ -61,6 +61,14 @@
       width: 550px;
       height: 210px;
       margin-top: 20px;
+      ol {
+        overflow-y: scroll;
+        li {
+          &:nth-child(n + 2) {
+            margin-top: 5px;
+          }
+        }
+      }
     }
     .fourthBlock {
       width: calc(100% - 570px);
