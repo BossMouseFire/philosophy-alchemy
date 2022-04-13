@@ -17,7 +17,7 @@ export const MainPage: React.FC = () => {
   }, []);
   return (
     <LayoutPage eraId={eraId}>
-      <History setForceUpdate={setForceUpdate} />
+      <History eraId={eraId} setForceUpdate={setForceUpdate} />
       <Game eraId={eraId} setEraId={setEraId} setForceUpdate={setForceUpdate} />
       {activeModal && <ModalHelper activeModal={activeModal} setActiveModal={setActiveModal} />}
     </LayoutPage>
