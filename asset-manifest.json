@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/philosophy-alchemy/static/css/main.58eeff4f.css",
+    "main.js": "/philosophy-alchemy/static/js/main.98747eeb.js",
+    "static/media/backgroundMiddleAge.png": "/philosophy-alchemy/static/media/backgroundMiddleAge.e99cf2e3f4b7fa0cb6b1.png",
+    "static/media/BackgroundRevival.png": "/philosophy-alchemy/static/media/BackgroundRevival.1106cea9fa13c92e5a7a.png",
+    "static/media/backgroundAntiquity.png": "/philosophy-alchemy/static/media/backgroundAntiquity.3475aa83be56c54f3f82.png",
+    "static/media/FiorinaGrande-Light.ttf": "/philosophy-alchemy/static/media/FiorinaGrande-Light.7f56829bc8a68dd8901e.ttf",
+    "static/media/FiorinaText-Light.ttf": "/philosophy-alchemy/static/media/FiorinaText-Light.a22f145aea0e28112b2f.ttf",
+    "static/media/FiorinaTitle-Light.ttf": "/philosophy-alchemy/static/media/FiorinaTitle-Light.13bf154c00d1f2b1bbed.ttf",
+    "static/media/FiorinaSubhead-Light.ttf": "/philosophy-alchemy/static/media/FiorinaSubhead-Light.376d13f77d565bd8aaab.ttf",
+    "static/media/stepThree.svg": "/philosophy-alchemy/static/media/stepThree.cf7ede98e82672705298b4ae36c3cdb4.svg",
+    "static/media/stepTwo.svg": "/philosophy-alchemy/static/media/stepTwo.78dc81150ae981fd4935585132f1490f.svg",
+    "static/media/stepOne.svg": "/philosophy-alchemy/static/media/stepOne.535b0420be2256b001882ee6961fa22d.svg",
+    "index.html": "/philosophy-alchemy/index.html",
+    "main.58eeff4f.css.map": "/philosophy-alchemy/static/css/main.58eeff4f.css.map",
+    "main.98747eeb.js.map": "/philosophy-alchemy/static/js/main.98747eeb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58eeff4f.css",
+    "static/js/main.98747eeb.js"
+  ]
+}
