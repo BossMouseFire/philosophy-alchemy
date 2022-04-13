@@ -4,8 +4,10 @@ import { Information } from '../information/information';
 import { useGlobalContext } from '../../context';
 import { ModalAbout } from '../modalAbout/modalAbout';
 import { ModalHelper } from '../modalHelper/modalHelper';
+import DataService from '../../services/DataService';
+import { IHistory } from './historyProps';
 
-export const History: React.FC = () => {
+export const History: React.FC<IHistory> = ({ setForceUpdate }) => {
   const { history } = useGlobalContext();
   const { title, years, description } = history;
   const [activeAboutModal, setActiveAboutModal] = useState<boolean>(false);
@@ -19,6 +21,11 @@ export const History: React.FC = () => {
     setActiveHelperModal(true);
   };
 
+  const onOpenAllElements = () => {
+    DataService.openAllElements();
+    setForceUpdate((state) => !state);
+  };
+
   return (
     <div className={styles.history}>
       <div className={styles.titleComponent}>
@@ -28,6 +35,7 @@ export const History: React.FC = () => {
       <div className={styles.actions}>
         <button onClick={onActiveAboutModal}>О проекте</button>
         <button onClick={onActiveHelperModal}>Как играть</button>
+        <button onClick={onOpenAllElements}>Обзор</button>
       </div>
       {activeAboutModal && (
         <ModalAbout activeModal={activeAboutModal} setActiveModal={setActiveAboutModal} />
