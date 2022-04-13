@@ -1,0 +1,39 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 462px;
+  height: 330px;
+  background: var(--medium-black);
+  border-radius: 50px;
+  border: 5px solid var(--red-color);
+  padding: 10px 50px 10px;
+  color: var(--white-color);
+  font-weight: 300;
+  opacity: 0;
+  transition: opacity ease-out 0.5s;
+  .titleModal {
+    font-size: 25px;
+  }
+  .viewElem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 100px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+  .descriptionElem {
+    font-size: 14px;
+  }
+}
+
+.activeModal {
+  opacity: 1;
+}

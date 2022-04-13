@@ -1,0 +1,83 @@
+.modalContentAbout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  height: 650px;
+  border-radius: 50px;
+  background: var(--bold-black);
+  border: 5px solid var(--white-color);
+  padding: 20px;
+  color: var(--white-color);
+  opacity: 0;
+  transition: opacity ease-out 0.5s;
+  .title {
+    font-size: 25px;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    .blockInfo {
+      display: flex;
+      flex-direction: column;
+      border-radius: 50px;
+      border: 5px solid var(--dim-red-color);
+      padding: 10px 20px;
+      font-size: 14px;
+      .subTitle {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .technologies {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+        margin-top: 20px;
+        .technology {
+          width: 40%;
+          span {
+            border: 2px solid var(--red-color);
+            padding: 10px;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+    .firstBlock {
+      width: 300px;
+      height: 320px;
+    }
+    .secondBlock {
+      width: calc(100% - 320px);
+      height: 320px;
+    }
+    .thirdBlock {
+      width: 550px;
+      height: 210px;
+      margin-top: 20px;
+      ol {
+        overflow-y: scroll;
+        li {
+          &:nth-child(n + 2) {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .fourthBlock {
+      width: calc(100% - 570px);
+      height: 210px;
+      margin-top: 20px;
+    }
+  }
+}
+
+.activeModal {
+  opacity: 1;
+}
