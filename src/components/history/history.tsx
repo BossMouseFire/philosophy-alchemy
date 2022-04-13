@@ -7,7 +7,7 @@ import { ModalHelper } from '../modalHelper/modalHelper';
 import DataService from '../../services/DataService';
 import { IHistory } from './historyProps';
 
-export const History: React.FC<IHistory> = ({ setForceUpdate }) => {
+export const History: React.FC<IHistory> = ({ eraId, setForceUpdate }) => {
   const { history } = useGlobalContext();
   const { title, years, description } = history;
   const [activeAboutModal, setActiveAboutModal] = useState<boolean>(false);
@@ -26,6 +26,11 @@ export const History: React.FC<IHistory> = ({ setForceUpdate }) => {
     setForceUpdate((state) => !state);
   };
 
+  const onOpenRandomElement = () => {
+    DataService.openRandomElement(eraId);
+    setForceUpdate((state) => !state);
+  };
+
   return (
     <div className={styles.history}>
       <div className={styles.titleComponent}>
@@ -36,6 +41,7 @@ export const History: React.FC<IHistory> = ({ setForceUpdate }) => {
         <button onClick={onActiveAboutModal}>О проекте</button>
         <button onClick={onActiveHelperModal}>Как играть</button>
         <button onClick={onOpenAllElements}>Обзор</button>
+        <button onClick={onOpenRandomElement}>Подсказка</button>
       </div>
       {activeAboutModal && (
         <ModalAbout activeModal={activeAboutModal} setActiveModal={setActiveAboutModal} />

@@ -31,6 +31,60 @@ class DataService {
     });
   }
 
+  public openRandomElement(idEra: number) {
+    const { eraArray } = this.data;
+    const era = eraArray.find((era) => era.id === idEra);
+    if (era) {
+      const findElements = era.elements.filter(
+        (element) => !element.enabled && element.status !== 'old'
+      );
+      this.checkParents(findElements, idEra);
+    }
+  }
+
+  private checkParents(elements: IElement[], idEra: number) {
+    const randomIndexElement = Math.floor(Math.random() * elements.length);
+    const randomElement = elements[randomIndexElement];
+
+    if (!randomElement) {
+      return;
+    }
+
+    let unOpenParent = false;
+
+    for (let i = 0; i < randomElement.parents.length; i++) {
+      const parent = this.getElement(idEra, randomElement.parents[i]);
+      if (!parent?.enabled) {
+        unOpenParent = true;
+        break;
+      }
+    }
+
+    if (unOpenParent) {
+      elements.splice(randomIndexElement, 1);
+      this.checkParents(elements, idEra);
+    } else {
+      randomElement.enabled = true;
+      this.checkElementOtherEra(randomElement);
+    }
+  }
+
+  private checkElementOtherEra(child: IElement) {
+    const { eraArray } = this.data;
+    for (let i = 0; i < eraArray.length; i++) {
+      const tempEra = this.getEraById(i);
+      if (tempEra) {
+        const { elements } = tempEra;
+        for (const element of elements) {
+          if (element.name === child.name) {
+            element.enabled = true;
+            break;
+          }
+        }
+      }
+    }
+  }
+
   public checkGeneralChild(
     parentOne: IElement,
     parentTwo: IElement,
@@ -80,19 +134,8 @@ class DataService {
     }
     generalChild.enabled = true;
 
-    const { eraArray } = this.data;
-    for (let i = 1; i < eraArray.length; i++) {
-      const tempEra = this.getEraById(i);
-      if (tempEra) {
-        const { elements } = tempEra;
-        for (const element of elements) {
-          if (element.name === generalChild.name) {
-            element.enabled = true;
-            break;
-          }
-        }
-      }
-    }
+    this.checkElementOtherEra(generalChild);
+
     return generalChild;
   }
 }
