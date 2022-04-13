@@ -1,0 +1,32 @@
+.aboutComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  color: white;
+  .title {
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  .years {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 7px;
+  }
+  .description {
+    height: 75%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      white-space: pre-line;
+      vertical-align: bottom;
+    }
+  }
+}
