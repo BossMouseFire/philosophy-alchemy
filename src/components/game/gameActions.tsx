@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './game.module.scss';
 import cn from 'classnames';
-import { IGameProps } from './gameProps';
+import { IGameActions } from './gameProps';
 import { useGlobalContext } from '../../context';
 
-export const GameActions: React.FC<IGameProps> = ({ eraId, setEraId }) => {
+export const GameActions: React.FC<IGameActions> = ({ eraId, setEraId }) => {
   const { setElements } = useGlobalContext();
 
   const onChangeEra = (eraId: number) => {

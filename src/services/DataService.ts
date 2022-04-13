@@ -22,6 +22,15 @@ class DataService {
     return undefined;
   }
 
+  public openAllElements() {
+    const { eraArray } = this.data;
+    eraArray.forEach((era) => {
+      era.elements.forEach((element) => {
+        element.enabled = true;
+      });
+    });
+  }
+
   public checkGeneralChild(
     parentOne: IElement,
     parentTwo: IElement,
