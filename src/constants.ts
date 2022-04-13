@@ -23,6 +23,6 @@ export const colors = {
   },
 };
 
-const url = 'http://localhost:3000/';
+const url = 'http://BossMouseFire.github.io/philosophy-alchemy/';
 
 export const urlImages = `${url}/images/`;
